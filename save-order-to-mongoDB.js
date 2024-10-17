@@ -39,8 +39,9 @@ app.post('/api/mongo-orders', async (req, res) => {
 
     // Проверки на существование данных
     const customerName = billingInfo?.contactDetails?.firstName && billingInfo?.contactDetails?.lastName
-      ? ${billingInfo.contactDetails.firstName} ${billingInfo.contactDetails.lastName}
-      : 'Не указано';
+  ? billingInfo.contactDetails.firstName + ' ' + billingInfo.contactDetails.lastName
+  : 'Не указано';
+
     const customerEmail = buyerEmail || 'Не указано';
     const customerPhone = billingInfo?.contactDetails?.phone || 'Телефон не указан';
 
